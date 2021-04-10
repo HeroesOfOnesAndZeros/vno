@@ -8,7 +8,7 @@ import { quietArg } from "./fns.ts";
 import { cmnd, serverTs, vnoconfig } from "./constants.ts";
 import { Config } from "../dts/factory.d.ts";
 import { ssrTemplate } from "../cli/templates.ts";
-
+// import { exec } from "https://deno.land/x/exec/mod.ts";
 //Contains Create, Build, Run, and flag commands
 
 export const create = async function (args: string[]): Promise<void> {
@@ -38,6 +38,21 @@ export const create = async function (args: string[]): Promise<void> {
   });
   return;
 };
+
+
+// export const dev = async function(args: string[]): Promise<void> {
+//  if(!cmnd.dev.test(args[0])) return;
+ 
+//     //create argument for these strings and import? 
+//  exec('denon run -A --unstable --allow-read --allow-run server.ts')
+//  exec('denon run --allow-read --allow-run ./core/dev/denor.ts')
+
+// }
+
+
+
+
+
 export let ssr = false
 //The Promise<void> syntax means the promise will resolve to undefined
 export const build = async function (args: string[]): Promise<void> {
