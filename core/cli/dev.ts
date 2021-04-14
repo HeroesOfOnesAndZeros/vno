@@ -60,7 +60,6 @@ export const runDevServer = async function (port: number, hostname: string) {
   server.addEventListener("listen", () => {
     print.LISTEN(port, hostname);
     if (running === false) {
-      console.log("await here");
       watchAndRebuild({ ssr: false });
       running = true;
     }
