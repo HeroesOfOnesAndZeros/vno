@@ -34,4 +34,5 @@ export { EventEmitter }
 
 //websocket 
 import { WebSocketClient, WebSocketServer } from "https://deno.land/x/websocket@v0.1.1/mod.ts";
-export { WebSocketClient, WebSocketServer}
+export { WebSocketServer}
+export type { WebSocketClient}
