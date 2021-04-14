@@ -31,3 +31,7 @@ export * as sfcCompiler from "https://denopkg.com/crewdevio/vue-deno-compiler/mo
 //event emitter for live reload
 import { EventEmitter } from "https://deno.land/std@0.93.0/node/events.ts"
 export { EventEmitter }
+
+//websocket 
+import { WebSocketClient, WebSocketServer } from "https://deno.land/x/websocket@v0.1.1/mod.ts";
+export { WebSocketClient, WebSocketServer}

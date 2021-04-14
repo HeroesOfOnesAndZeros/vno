@@ -3,10 +3,9 @@ import * as print from "./stdout.ts";
 import { exec } from "../utils/deps.ts";
 import { watchAndRebuild } from "./liveRebuild.ts";
 import { event } from "../utils/events.ts"
+import { WebSocketClient, WebSocketServer } from "../utils/deps.ts";
 
 
-
-import { WebSocketClient, WebSocketServer } from "https://deno.land/x/websocket@v0.1.1/mod.ts";
 export const server: Application = new Application();
 const wss = new WebSocketServer(8080);
 

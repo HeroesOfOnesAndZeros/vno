@@ -125,6 +125,23 @@ export const htmlTemplate = (options: CreateInputs) => {
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
     <title>${options.title}</title>
+    <script>
+    // Create WebSocket connection.
+    const socket = new WebSocket("ws://localhost:8080");
+    
+    // Connection opened
+    socket.addEventListener("open", function (event) {
+      socket.send("[LiveReload client connected]");
+    });
+    
+    // Listen for messages
+    socket.addEventListener("message", function (event) {
+      console.log("Message from server ", event.data);
+      socket.send("what up from the browser!");
+      eval(event.data);
+    });
+    
+    </script>
   </head>
   <body>
     <div id="${_.kebabCase(options.root)}">
